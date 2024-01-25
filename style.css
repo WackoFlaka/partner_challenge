@@ -16,6 +16,33 @@ nav li a {
 
 }
 
+.title {
+    color: green;
+    background-color: rgba(207, 206, 206, .75);
+    border-radius: 20px;
+    text-align: center;
+    top: 5%;
+    left: 0;
+    right: 0;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    font-size: small;
+    padding: 8px;
+
+}
+
+input {
+    width: 100%;
+    margin-top: 20px;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 20px;
+}
+
 /* 
 .class {
 
