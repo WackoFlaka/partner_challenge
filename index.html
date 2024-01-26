@@ -1,335 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- TODO | THINGS TO KEEP IN MIND 
+    Breakpoints
+    Colors and Background Colors
+    Flex
+    Padding and Margin
+    Responsiveness
+
+    p - stands for padding
+    m - stands for margin
+    
+-->
+
+<!-- NOTE | IF YOU SEE "md" in classes, that means whenever you are on desktop. That class will apply! 
+For example:
+
+Mobile Version
+py-5
+
+Desktop Version
+py-md-5
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight Studios</title>
+
+    <!-- NOTE Favicon on the website -->
+    <link rel="shortcut icon" href="images/BlackHorse.png" type="image/x-icon">
+
+    <!-- NOTE BootStrap CSS Stylesheet -->
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'
         integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
+        
+    <!-- NOTE Bootstrap JS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- NOTE Material Design Icons CSS Stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
 
-
+    <!-- NOTE Your own linked CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <title>Horse Knights</title>
 </head>
 
 <body>
-
-    <!-- SECTION IGNORE THIS SECTION-->
-
-    <!--
-    <div class="start d-flex align-items-center flex-column justify-content-center py-5 my-5">
-        <img src="images/horse.png" alt="logo" class="text-white">
-        <h1 class="text-white">Welcome To Knight Studios</h1>
-        <p class="text-white">We are a team of talented designers making websites with bootstrap</p>
-        <div class="spinner-border text-white" role="status">
-            <span class="visually-hidden">Loading...</span>
+    <!-- SECTION | This section is used for beginning animation, ignore this -->
+    <section class="container-fluid">
+        <div class="row justify-content-center align-items-center rowH">
+            <div class="col-10 text-center">
+                <img src="images/WhiteHorse.png" alt="logo" class="my-5" width="20%">
+                <h1 class="text-white">Welcome to Knight Studios</h1>
+                <p class="text-white">We are team of talented designers making websites with bootstrap</p>
+                <div class="spinner-border text-white" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>  
+            </div>
         </div>
-    </div>
--->
+    </section>
+    <!-- !SECTION -->
+    
+    <!-- NOTE | screen class is used for beginning animation, ignore the div -->
+    <div class="screen">
 
+    <!-- SECTION | this is where the HEADER SECTION of the webpage starts 
 
+    Width can be used inside the img tag without adding a class or applying in a different css stylesheet. This helps a lot with the image not going over other things.
+    
+    The nav tag is defined better than a div to better specify where the navigation bar is. "li" stands for a list item, the "a" tag is a anchor tag or better define as an link for users to navigate different pages.
+
+    If you notice, two specific "a" tags have a class called active. It just gives that specific link tag a green color (in your style.css).
+    
+    -->
+
+    <header class="d-flex justify-content-around align-items-center shadow p-2 sticky-top bg-white">
+        <!-- NOTE | header has display flex to inline the logo and navigation bar. A shadow class to give a nice box shadow and sticky top class for the header to follow as you scroll. 
+        -->
+       <div class="d-md-flex d-none align-items-center">     
+        <div class="logo"><img src="images/BlackHorse.png" alt="logo" width="15%"></div>
+        <nav class="d-flex">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#" class="active">Team</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+        </nav>        
+    </div>   
+    
+    
+        <!-- NOTE | this entire html was grabbed from Bootstrap for mobile navigation responsiveness. So I would ignore this.-->   
+        <nav class="navbar fixed-top d-md-none d-flex shadow black">
+            <div class="container-fluid">
+                <div class="navbar-brand">Knight Studios</div>
+              <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon screen"></span>
+              </button>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Knight Studios</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                  <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
     <!-- !SECTION -->
 
-    <header class="d-flex justify-content-between align-items-center p-2 shadow">
-        <div class="logo">
-            <img src="images/logo.png" alt="" width="100px" class="mx-5">
-        </div>
-        <nav class="d-flex">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </nav>
-    </header>
-
     <main>
-        <!-- SECTION about us-->
-        <section class="container-fluid my-3">
-            <h2 class="text-center mt-5">About Us</h2>
-            <p class="text-center">Mangam dolores commodi suscript eius consequatar</p>
-            <div class="row justify-content-evenly">
-                <div class="col-4">
-                    <img src="https://plus.unsplash.com/premium_photo-1661281350976-59b9514e5364?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="office" width="100%" class="border border-5">
+        
+        <!-- SECTION | this is where the ABOUT PAGE section starts 
+        
+        The first column starts off with a image that include classes "p-4" and "shadow". Instead of giving it a border class, it would be better to give some padding and add shadow. 
+        
+        The second column has content. Instead of using a list item, I used the "i" tag to grab the class "mdi mdi-check-all" icon. Giving it a list item style.
+        
+        -->
+        <section class="container-fluid py-5">
+            <h1 class="text-center">About Us</h1>
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="row justify-content-around py-5 align-items-center">
+
+                <!-- NOTE | First Column for the image, gave padding to image and shadow to give off a nice box shadow effect -->
+                <div class="col-12 col-md-5">
+                    <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="" width="100%" class="p-4 shadow">
                 </div>
-                <div class="col-4">
-                    <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eveniet ea nisi reprehenderit
-                        reiciendis totam laudantium architecto quo minus molestiae.</p>
-                    <p>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officia doloribus
-                            laboriosam eum quos, ullam laudantium amet iusto eos neque!</li>
-                    </p>
-                    <p>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officia doloribus
-                            laboriosam eum quos, ullam laudantium amet iusto eos neque!</li>
-                    </p>
-                    <p>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officia doloribus
-                            laboriosam eum quos, ullam laudantium amet iusto eos neque!</li>
-                    </p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum eligendi laudantium voluptates
-                        aspernatur? Quia, eligendi quisquam modi minima consectetur reiciendis quo cumque quis iusto
-                        reprehenderit ratione at aperiam cupiditate magni exercitationem aliquam, accusantium, illo hic!
-                        Praesentium, cum ipsum laudantium delectus officia saepe nulla magni modi adipisci a reiciendis
-                        distinctio asperiores?</p>
+
+                <!-- NOTE | Second column for content -->
+                <div class="col-12 col-md-5 p-4 p-md-2 m-2">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A quibusdam architecto, qui accusantium cum fuga.</p>
+                    <p><i class="mdi mdi-check-all fs-4 text-success"></i>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime porro quisquam repellat quaerat incidunt ex eius commodi natus itaque praesentium.</li></p>
+                    <p><i class="mdi mdi-check-all fs-4 text-success"></i>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime porro quisquam repellat quaerat incidunt ex eius commodi natus itaque praesentium.</p>
+                    <p><i class="mdi mdi-check-all fs-4 text-success"></i>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime porro quisquam repellat quaerat incidunt ex eius commodi natus itaque praesentium.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, necessitatibus perspiciatis porro
+                        placeat sequi perferendis sapiente fuga eaque, repudiandae, expedita et tempora dolores
+                        laudantium aliquam!</p>
                 </div>
             </div>
         </section>
         <!-- !SECTION -->
-        <!-- SECTION services -->
-        <section class="container-fluid my-3">
-            <h2 id="services" class="text-center mt-5"> Services</h2>
-            <p class="text-center">Mangam dolores commodi suscript eius consequatar</p>
-            <div class="row justify-content-evenly">
-                <div class="col-5">
-                    <div class="row flex-row">
-                        <div class="col-3 d-flex justify-content-end"><i class="mdi mdi-toolbox fs-2"></i></div>
-                        <div class="col-9">
-                            <h3>Est labore ad</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum cumque dolorem, ipsam
-                                voluptates
-                                dolores nulla?</p>
-                        </div>
-                        <div class="col-3 d-flex justify-content-end"><i class="mdi mdi-toolbox fs-2"></i></div>
-                        <div class="col-9">
-                            <h3>Est labore ad</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum cumque dolorem, ipsam
-                                voluptates
-                                dolores nulla?</p>
-                        </div>
-                        <div class="col-3 d-flex justify-content-end"><i class="mdi mdi-toolbox fs-2"></i></div>
-                        <div class="col-9">
-                            <h3>Est labore ad</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum cumque dolorem, ipsam
-                                voluptates
-                                dolores nulla?</p>
-                        </div>
-                        <div class="col-3 d-flex justify-content-end"><i class="mdi mdi-toolbox fs-2"></i></div>
-                        <div class="col-9">
-                            <h3>Est labore ad</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum cumque dolorem, ipsam
-                                voluptates
-                                dolores nulla?</p>
-                        </div>
+        
+        
+        <!-- SECTION | this is where the SERVICES PAGE  page start   
+        
+        Don't get confused but there are two rows being involved in this container. The reason is so that the icons can center between the "h1" and "p" tag. I did specify which row is which and which column it belongs to.  
+        
+        The second row has a class "align-items-center" which makes all columns center vertically (The icons (i) and tags (h1,p) have their own columns which means both are in the center). 
+        
+        As the first row, the only thing its doing is taking the two columns (first row) and doing justify content around. 
+            
+        
+        How it looks
+            Row
+              Column
+                 Row
+                  2 Columns
+                  2 Columns
+                  2 Columns
+                  2 Columns 
+              Column
 
-
-
-
-                    </div>
+                   
+        -->
+        <section class="container-fluid py-5">
+            <h1 class="text-center">Services</h1>
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="row justify-content-around flex-column-reverse flex-md-row align-items-center"> <!-- FIRST ROW STARTS HERE -->
+                
+                <!-- NOTE | First Column for Content (First Row)-->
+                <div class="col-12 col-md-5">
+                    <div class="row align-items-center"> <!-- SECOND ROW STARTS HERE -->
+                        
+                        <!-- NOTE Column for second row -->
+                        <div class="col-1"><i class="mdi mdi-note-plus-outline fs-1"></i></div>
+                        <div class="col-11">
+                            <h1>Lorem, ipsum dolor.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis vel reprehenderit vitae voluptatum? Soluta, rem! Debitis libero rerum odio mollitia? Odit vitae recusandae nulla libero.</p>
+                        </div>
+                        
+                        <!-- NOTE Column for second row -->
+                        <div class="col-1"><i class="mdi mdi-square fs-1"></i></div>
+                        <div class="col-11">
+                            <h1>Lorem, ipsum dolor.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis vel reprehenderit vitae voluptatum? Soluta, rem! Debitis libero rerum odio mollitia? Odit vitae recusandae nulla libero.</p>
+                        </div>
+                        
+                        <!-- NOTE Column for second row -->
+                        <div class="col-1"><i class="mdi mdi-chart-line-stacked fs-1"></i></div>
+                        <div class="col-11">
+                            <h1>Lorem, ipsum dolor.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis vel reprehenderit vitae voluptatum? Soluta, rem! Debitis libero rerum odio mollitia? Odit vitae recusandae nulla libero.</p>
+                        </div>
+                        
+                        <!-- NOTE Column for second row -->
+                        <div class="col-1"><i class="mdi mdi-shield fs-1"></i></div>
+                        <div class="col-11">
+                            <h1>Lorem, ipsum dolor.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis vel reprehenderit vitae voluptatum? Soluta, rem! Debitis libero rerum odio mollitia? Odit vitae recusandae nulla libero.</p>
+                        </div>
+                    </div> <!-- second row ends here -->
                 </div>
-                <div class="col-5">
-                    <img src="https://plus.unsplash.com/premium_photo-1661281350976-59b9514e5364?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="office" width="100%" class="border border-5">
+                
+                <!-- NOTE | Second Column for Image (First Row)-->
+                <div class="col-12 col-md-5">
+                    <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="" width="100%" class="py-5 py-md-0">
                 </div>
-            </div>
+            </div> <!-- First Row ends here -->
         </section>
+        
         <!-- !SECTION -->
-        <!-- SECTION bellow our seervices - buttons -->
-        <section class="container-fluid my-5">
-            <div class="row justify-content-evenly">
-                <div class="col-5">
-                    <img src="https://plus.unsplash.com/premium_photo-1661281350976-59b9514e5364?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="office" width="100%" class="border border-5">
-                </div>
-                <div class="col-5">
-                    <button class="btn btn-outline shadow" type="button">
-                        <h4>something</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, corporis?</p>
-                    </button>
-                    <button class="btn btn-outline" type="button">
-                        <h4>something</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, corporis?</p>
-                    </button>
-                    <button class="btn btn-outline" type="button">
-                        <h4>something</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, corporis?</p>
-                    </button>
-                    <button class="btn btn-outline" type="button">
-                        <h4>something</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, corporis?</p>
-                    </button>
-                </div>
-            </div>
-        </section>
+        
+         <!-- SECTION | this is where the PORTFOLIO PAGE starts 
 
-        <!-- SECTION video -->
-        <section class="container-fluid">
-            <div class="row justify-content-evenly">
-                <div class="col-5">
-                    <h3>Lorem ipsum dolor <b>sit amet consectetur adipisicing elit. A!</b></h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos iusto officiis in unde similique
-                        veniam sapiente veritatis quod aliquid.</p>
-                    <button class="btn btn-outline shadow" type="button">
-                        <h4>something</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, corporis?</p>
-                    </button>
-                    <button class="btn btn-outline" type="button">
-                        <h4>something</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, corporis?</p>
-                    </button>
-                    <button class="btn btn-outline" type="button">
-                        <h4>something</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, corporis?</p>
-                    </button>
+            Here in the portfolio, its just one row with two columns. So you might notice something differrent and that would be that the content is no longer buttons. Fun fact, buttons are meant to only submit forms or information. Since this is the portfolio page, we want take users to different pages to show our work, so its best to leave them as cards for now and could possibly have them as anchor tags for links to different pages.
+            
+            NOTE: Yes a button can possibly take a user to a different page, however it requires javascript since you want a button to link to something instead of submitting. 
+            
+            SETH I GOTCHU - each card has a class called "hover" which is located in our css stylesheet giving it a nice box shadow hover. 
+    
+    -->
+        
+        <section class="container-fluid py-5">
+            <div class="row justify-content-around align-items-center">
+                
+                <div class="col-12 col-md-5">
+                    <!-- NOTE | image is at 100% to avoid the image to go off screen or if it becomes to small for the users to see -->
+                    <img src="images/man.png" alt="globe" width="100%">
                 </div>
-                <div class="col-5">
-                    <img src="https://plus.unsplash.com/premium_photo-1661281350976-59b9514e5364?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="office" width="100%" class="border border-5">
-                </div>
-            </div>
-        </section>
-        <!-- !SECTION -->
-
-
-        <!-- SECTION comment -->
-        <section class="container-fluid building my-5 py-5">
-            <div class="row justify-content-center">
-                <div class="col-8 text-center text-white">
-                    <i class="mdi mdi-comment-quote fs-1"></i>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam sed impedit at perferendis,
-                        enim distinctio inventore? Repellendus nihil quod, sit nulla nobis commodi quaerat maiores quis
-                        enim minima itaque quidem.</p>
-                    <i class="mdi mdi-account fs-1"></i>
-                    <h4>Matt Brandon</h4>
-                    <p class="fs-6">Pizza Shop</p>
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <i class="mdi mdi-circle-outline"></i>
-                            <i class="mdi mdi-circle-outline"></i>
-                            <i class="mdi mdi-circle-outline"></i>
-                            <i class="mdi mdi-circle"></i>
-                            <i class="mdi mdi-circle-outline"></i>
+                
+                <div class="col-12 col-md-5">
+                    
+                    <!-- NOTE | FIRST CARD -->
+                    <div class="card border-1 my-2 shadow">
+                        <div class="card-body hover">
+                            <h3 class="text-success">Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, neque.</p>
                         </div>
                     </div>
+                    <!-- CARD DIV ENDS HERE-->
+                    
+                    <!-- NOTE | SECOND CARD -->
+                    <div class="card my-2 border-0  bg-transparent">
+                        <div class="card-body hover">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, neque.</p>
+                        </div>
+                    </div>
+                    <!-- CARD DIV ENDS HERE-->
+                    
+                    <!-- NOTE | THIRD CARD -->
+                    <div class="card my-2 border-0">
+                        <div class="card-body hover">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, neque.</p>
+                        </div>
+                    </div>
+                    <!-- CARD DIV ENDS HERE-->
+                    
+                    <!-- NOTE | FOURTH CARD -->
+                    <div class="card my-2 border-0">
+                        <div class="card-body hover">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, neque.</p>
+                        </div>
+                    </div>
+                    <!-- CARD DIV ENDS HERE-->
+                    
                 </div>
             </div>
         </section>
-        <!-- !SECTION -->
-
-
-        <!-- SECTION pricing -->
-        <section class="container-fluid my-4">
-            <h2>Pricing</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit magnam mollitia nemo velit in magni.
-            </p>
-            <div class="row justify-content-center">
-                <div class="col-3 text-center">
-                    <div class="card py-5">
-                        <h5>Free</h5>
-                        <p><i class="mdi mdi-currency-usd"></i><span class="fs-2">0</span>/month
-                        </p>
-                        <p>Lorem, ipsum.</p>
-                        <p>Lorem, ipsum.</p>
-                        <p>Lorem, ipsum.</p>
-                        <p>Lorem, ipsum.</p>
-                        <button type="buttom">
-                            Buy now
-                        </button>
-                    </div>
+        
+        <!-- SECTION -->
+        
+        
+        <!-- SECTION | this is where the TEAM PAGE start
+            
+            Ok I mightve went overboard so lets not worry about the dropdown or aka the accordion. The accordion was grabbed in bootstrap so if you want to learn more about it, look up accordion in bootstrap.
+            
+            HOWEVER, there is one important thing about this section and that would be "object fit". So if you scroll down to our second column of our image. Notice that there is a class in our second column called "port", the class is location in our stylesheet "object-fit". Another thing is both columns had to equal 12...why? Well thats because if I had two columns that were size 5, then the image have space and thats not want we want. If you have two columns that equal to 12 using up all space, you are able to get this nice image with content with.
+            
+            Like I said, do not worry about the accordion. I had to change the width and mobile width. It was not fun :)
+    
+    -->
+        
+        <section class="container-fluid mt-5">
+            <div class="row flex-column-reverse flex-md-row align-items-center align-items-md-stretch">
+                <div class="col-12 col-md-8 p-5 bg-body-secondary d-flex flex-column align-items-center">
+                    <h1 class="w-75">Lorem ipsum dolor sit <b>amet consectetur, adipisicing elit. Odio!</b></h1>
+                    <p class="w-75">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero vel illo facilis incidunt voluptatibus officia mollitia sint unde praesentium commodi.</p>
+                
+                    <div class="accordion accordion-flush w-100 w-md-75" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed text-success" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              <i class="mdi mdi-numeric-1-circle-outline fs-3 mx-2 text-success"></i>Lorem ipsum dolor sit amet.
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse show" data-bs-parent="#accordionFlushExample" style="">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                <i class="mdi mdi-numeric-2-circle-outline fs-3 mx-2"></i>Lorem ipsum dolor sit amet.
+                            </button>
+                          </h2>
+                          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                <i class="mdi mdi-numeric-3-circle-outline fs-3 mx-2"></i>Lorem ipsum dolor sit amet.
+                            </button>
+                          </h2>
+                          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
-                <div class="col-3 text-center">
-                    <div class="card py-5">
-                        <h3 class="title">Recommended</h3>
-                        <h5>Free</h5>
-                        <p><i class="mdi mdi-currency-usd"></i><span class="fs-2">0</span>/month
-                        </p>
-                        <p>Lorem, ipsum.</p>
-                        <p>Lorem, ipsum.</p>
-                        <p>Lorem, ipsum.</p>
-                        <p>Lorem, ipsum.</p>
-                        <button type="buttom">
-                            Buy now
-                        </button>
-                    </div>
-                </div>
-                <div class="col-3 text-center">
-                    <div class="card py-5">
-                        <h5>Free</h5>
-                        <p><i class="mdi mdi-currency-usd"></i><span class="fs-2">0</span>/month
-                        </p>
-                        <p>Lorem, ipsum.</p>
-                        <p>Lorem, ipsum.</p>
-                        <p>Lorem, ipsum.</p>
-                        <p>Lorem, ipsum.</p>
-                        <button type="buttom">
-                            Buy now
-                        </button>
-                    </div>
+                
+                <!-- NOTE | image at 100% to avoid to go off screen or if it becomes to small for users to see. The property object fit is applied. Check out style.css and find the class "port"-->
+                <div class="col-12 col-md-4 port p-0">
+                    <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width="100%" height="100%">
                 </div>
             </div>
         </section>
+        
         <!-- !SECTION -->
-        <!-- SECTION Contact-->
-        <section class="container-fluid my-3">
-            <h2 id="contact"">Contact</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non laboriosam itaque esse ex nemo.</p>
-            <div class=" row">
-                <div class="col-4">
-                    <div class="card">
-                        <div class="row">
-                            <div class="col-3 d-flex justify-content-end"><i class="mdi mdi-toolbox fs-2"></i></div>
-                            <div class="col-9">
-                                <p>Lorem, ipsum dolor.</p>
+        
+        
+        <!-- SECTION | this is where the QUOTE page starts 
+            
+            Okay there really isn't much to explain about this one. If you want to learn more about background image properties, look into our own stylesheet and look for the class "building".
+    
+    -->
+        
+            <section class="container-fluid building py-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 text-center">
+                        <span class="mdi mdi-format-quote-close text-sucess display-1  p-2 text-success"></span>
+                        <h4 class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur earum suscipit sapiente sequi, laborum error amet inventore, saepe placeat dolor officiis doloribus, eius nesciunt facilis iusto at adipisci consequuntur libero!</h4>
+                        <span class="mdi mdi-account-tie display-1 text-white"></span>
+                        <h3 class="text-white">Matt Brandon</h3>
+                        <p class="text-white">Freelancer</p>
+                            <div class="d-flex justify-content-center">
+                                <i class="mdi mdi-circle-outline text-white"></i>
+                                <i class="mdi mdi-circle-outline text-white"></i>
+                                <i class="mdi mdi-circle-outline text-white"></i>
+                                <i class="mdi mdi-circle text-success"></i>
+                                <i class="mdi mdi-circle-outline text-white"></i>
                             </div>
-                            <div class="col-3 d-flex justify-content-end"><i class="mdi mdi-toolbox fs-2"></i></div>
-                            <div class="col-9">
-                                <p>Lorem, ipsum dolor.</p>
+                    </div>
+                </div>
+            </section>
+        
+        <!-- !SECTION -->
+        
+        
+        <!-- SECTION | this is where the SERVICES PAGE start
+            
+            Yea yea I know I didn't add the RECOMMENDED text but at least the cards look good in style. Anways there is a lot to cover on this one. Like I said before, to make it a bit easier Ill add notes to every break in that code to further explain where things are. But if you don't really know the difference between "card" or "card-body". So basically "cards have no fixed width to start, so they'll naturally fill the full width of its parent element". And then the card-body is where youll want to put your content.
+    
+    -->
+            <section class="container-fluid pt-5 bg-body-secondary">
+                <h1 class="text-center">Services</h1>
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur.</p>
+                
+                <!-- NOTE | ROW -->
+                <div class="row justify-content-center">
+                    
+                    <!-- NOTE | COLUMN-->
+                    <div class="col-12 col-md-3">
+                        
+                        <!-- NOTE | FIRST CARD -->
+                        <div class="card my-5 my-md-0">
+                            <div class="card-body text-center">
+                                <h3>Free</h3>
+                                <p><span class="fs-1"><i class="mdi mdi-currency-usd fs-5"></i>0</span></i>/month</p>
+                                <p>Aida dere</p>
+                                <p>Nec feugiat nisl</p>
+                                <p>Nulla at volutpat dola</p>
+                                <p class="text-decoration-line-through text-secondary">Phareta massa</p>
+                                <p class="text-decoration-line-through text-secondary">Massa ultreicies mi</p>
+                                <button type="button" class="btn btn-outline-success px-4 m-4">Buy Now</button>
                             </div>
-                            <div class="col-3 d-flex justify-content-end"><i class="mdi mdi-toolbox fs-2"></i></div>
-                            <div class="col-9">
-                                <p>Lorem, ipsum dolor.</p>
+                        </div>    
+                    </div>
+                    
+                    <!-- NOTE | COLUMN-->
+                    <div class="col-12 col-md-3">
+                        
+                        <!-- NOTE | SECOND CARD -->
+                        <div class="card border border-success-subtle shadow my-5 my-md-0">
+                            <div class="card-body text-center">
+                                <h3>Business</h3>
+                                <p><span class="fs-1"><i class="mdi mdi-currency-usd fs-5"></i>19</span></i>/month</p>
+                                <p>Aida dere</p>
+                                <p>Nec feugiat nisl</p>
+                                <p>Nulla at volutpat dola</p>
+                                <p>Phareta massa</p>
+                                <p class="text-decoration-line-through text-secondary">Massa ultreicies mi</p>
+                                <button type="button" class="btn btn-success px-4 m-4">Buy Now</button>
+                            </div>
+                        </div>    
+                    </div>
+                    
+                    <!-- NOTE | COLUMN-->
+                    <div class="col-12 col-md-3">
+                        
+                        <!-- NOTE | THIRD CARD -->
+                        <div class="card my-5 my-md-0">
+                            <div class="card-body text-center">
+                                <h3>Developer</h3>
+                                <p><span class="fs-1"><i class="mdi mdi-currency-usd fs-5"></i>29</span></i>/month</p>
+                                <p>Aida dere</p>
+                                <p>Nec feugiat nisl</p>
+                                <p>Nulla at volutpat dola</p>
+                                <p>Phareta massa</p>
+                                <p>Massa ultreicies mi</p>
+                                <button type="button" class="btn btn-outline-success px-4 m-4">Buy Now</button>
+                            </div>
+                        </div>    
+                    </div>
+                    
+                </div>
+            </section>
+        <!-- !SECTION -->
+        
+        <!-- SECTION | this is where the CONTACT PAGE starts 
+        
+        So the input was grabbed from Bootstrap but I did change a bit of styles to have it look a bit better. Like I said before, they have this on Bootstrap so you can look it up. However Ill explain a bit about it with some notes. 
+        
+        If you have notice there are two rows being involved again just like the services page except this one is a bit smaller and different column sizes. Everytime there is an input, we first put it into a input-group div and then add whatever input type you want. The classes input-group and form-control are bootstrap classes. 
+            
+        -->
+        
+            <section class="container-fluid pt-5 bg-body-secondary">
+                <h1 class="text-center">Contact</h1>
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur.</p>
+                
+                <!-- NOTE | ROW -->
+                <div class="row justify-content-around py-0 py-md-5">
+                    
+                    <!-- NOTE | COLUMN -->
+                    <div class="col-12 col-md-3 bg-white p-5">
+                        
+                        <!-- NOTE | ROW -->
+                        <div class="row align-items-center">
+                            
+                            <!-- NOTE | 2 COLUMNS -->
+                            <div class="col-2"><i class="mdi mdi-map-marker fs-1"></i></div>
+                            <div class="col-10">
+                                <h1>Location:</h1>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+                            
+                            <!-- NOTE | 2 COLUMNS -->
+                            <div class="col-2"><i class="mdi mdi-email fs-1"></i></div>
+                            <div class="col-10">
+                                <h1>Email:</h1>
+                                <p>info@example.com</p>
+                            </div>
+                            
+                            <!-- NOTE | 2 COLUMNS -->
+                            <div class="col-2"><i class="mdi mdi-cellphone fs-1"></i></div>
+                            <div class="col-10">
+                                <h1>Call"</h1>
+                                <p>1+ 5589 55488 55s</p>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- NOTE | COLUMN -->
+                    <div class="col-12 col-md-6 bg-white p-5">
+                        <form>
+                           <div class="input-group">
+                                <input type="text" placeholder="Your Name" class="form-control start">
+                                <input type="text" placeholder="Your Email" class="form-control start">
+                           </div> 
+                           
+                           <div class="input-group">
+                                <input type="text" placeholder="Subject" class="form-control start">
+                           </div>
+                           
+                           <div class="input-group">
+                            <input type="text" placeholder="Message" class="form-control py-5 start">
+                           </div>
+                           
+                           <div class="input-group justify-content-center">
+                            <button type="button" class="btn btn-success px-4 m-4">Send Message</button>
+                           </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="col-8">
-                    <form>
-                        <div class="form-floating">
-                            <div class="row">
-                                <div class="col-6">
-                                    <input type="text" placeholder="Your Name" class="flex-grow">
-                                </div>
-                                <div class="col-6">
-                                    <input type="text" placeholder="Your Email" class="flex-grow">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" placeholder="Subject" class="flex-grow">
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="Message"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                </div>
-        </section>
+            </section>
+        
         <!-- !SECTION -->
     </main>
+    
+    <!-- SECTION 
+    
+        As Im writing this, its 12:52 AM LOL. But its the last thing and its the footer. Input classes are from Bootstrap so if you ever want a nice submit button inside your input, you can look it up in Bootstrap so I would ignore the inputs.
+        
+        Theres really nothing special about this section except icons are bigger and different image.  
+    
+    -->
+    
     <footer>
-        <section class="container-fluid building text-white py-5">
+        <section class="container-fluid py-5">
+            
+            <!-- NOTE | ROW -->
             <div class="row justify-content-center text-center">
-                <div class="col-6">
-                    <img src="images/horse.png" alt="logo" width="200px">
-                    <h2>Knight</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sequi id est asperiores libero
-                        dolor amet.
-                    </p>
-                    <form>
-                        <input type="text" placeholder="Your Email" class="flex-grow">
-                        <button type="submit">Subscribe</button>
-                    </form>
+                
+                <!-- NOTE | COL -->
+                <div class="col-9">
+                    <img src="images/WhiteHorse.png" alt="logo" width="10%">
+                    <h1 class="text-white">Knight</h1>
+                    <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In necessitatibus ad inventore, pariatur deserunt ut unde porro exercitationem quae perferendis?</p>
+                    <div class="input-group mb-3 size">
+                        <input type="text" class="form-control" placeholder="Enter your Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-success" type="button">Subscribe</button>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <i class="mdi mdi-twitter fs-1 text-success"></i>
+                        <i class="mdi mdi-facebook fs-1 text-success"></i>
+                        <i class="mdi mdi-instagram fs-1 text-success"></i>
+                        <i class="mdi mdi-skype fs-1 text-success"></i>
+                        <i class="mdi mdi-linkedin fs-1 text-success"></i>
+                      </div>
                 </div>
             </div>
         </section>
-
     </footer>
+    <!-- !SECTION -->
+</div>
 </body>
 
 </html>

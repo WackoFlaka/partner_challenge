@@ -1,54 +1,184 @@
+body {
+    animation: overflow 4s forwards ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+
+@keyframes overflow {
+    0% {
+        overflow-y: hidden;
+    }
+    
+    100% {
+        overflow-y: visible;
+    }
+}
+
+.rowH {
+    height: 100vh;
+    background-color: black;
+    animation: FadeOut 0.5s forwards ease-out;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes FadeOut {
+    0% {
+        background-color: black;
+    }
+    
+    100% {
+        background-color: white;
+        height: 0;
+        display: none;
+    }
+}
+
+.screen {
+    animation: FadeIn 2s forwards ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+
+nav {
+    animation: FadeIn 2s forwards ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+
+.navbar-toggler-icon {
+    animation: opacity 0.5s forwards ease-out;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    background-color: black;
+    background-blend-mode: color;
+}
+
+.black {
+    background-color: rgb(0, 0, 0);
+    animation: color-fix 0.5s forwards ease-out;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes color-fix  {
+    0% {
+        background-color: black;
+        
+    }
+    
+    100% {
+        background-color: white;
+    }
+}
+
+
+
+@keyframes FadeIn {
+    0% {
+        display: none;
+        
+    }
+    
+    100% {
+        display: block;
+    }
+}
+
+
+@keyframes opacity {
+    0% {
+        background-color: black;
+        background-blend-mode: color;
+    }
+    
+    100% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+
+
+/* SECTION - Navigation Bar CSS */
 nav li {
     list-style-type: none;
-    padding: 14px 35px;
+    padding: 14px 25px;
 }
 
 nav li a {
-    color: black;
     text-decoration: none;
+    color: black;
+    text-transform: uppercase;
 }
+
+.active {
+    color: rgb(93, 186, 0);
+}
+/* !SECTION */
+
+
+/* SECTION Portfolio Page */
+.port img {
+    object-fit: cover;
+}
+/* !SECTION */
+
+
+
+
+
+
+/* SECTION Quote Page */
 
 .building {
     background-image: url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-color: rgba(0, 0, 0, 0.62);
     background-blend-mode: color;
-    background-position: top;
-    background-color: rgba(0, 0, 0, 0.582);
-
 }
 
-.title {
-    color: green;
-    background-color: rgba(207, 206, 206, .75);
-    border-radius: 20px;
-    text-align: center;
-    top: 5%;
-    left: 0;
-    right: 0;
-    width: 50%;
+/* !SECTION */
+
+
+
+/* SECTION Contact Page */
+
+.start {
+    margin: 10px 10px;
+}
+
+/* !SECTION */
+
+
+.hover {
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.hover:hover {
+    box-shadow: 0px 0px 1px 2px;
+    cursor: pointer;
+}
+
+
+
+/* SECTION Footer */
+
+footer {
+    background-image: url(https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-color: rgba(0, 0, 0, 0.62);
+    background-blend-mode: color;
+    background-position: center;
+}
+
+.size {
+    position: relative;
     margin-right: auto;
     margin-left: auto;
-    position: absolute;
-    font-size: small;
-    padding: 8px;
-
+    width: 50%;
 }
 
-input {
-    width: 100%;
-    margin-top: 20px;
+@media screen AND (max-width: 768px) {
+    .size {
+        width: 90%;
+    }
 }
-
-textarea {
-    width: 100%;
-    margin-top: 20px;
-}
-
-/* 
-.class {
-
-}
-#id {
-
-}
- 
-*/
